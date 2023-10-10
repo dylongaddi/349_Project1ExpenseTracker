@@ -10,4 +10,12 @@ function initHighlight () {
   if (hleButton) hleButton.addEventListener('click', highlightEditables);
 }
 
+function getCategoryTotal(category) {
+  let categoryTotal = 0
+  category.forEach((expense) => {
+    categoryTotal += expense.money
+  })
+  return categoryTotal
+}
+
 initHighlight();

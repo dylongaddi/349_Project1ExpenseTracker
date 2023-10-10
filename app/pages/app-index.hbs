@@ -5,12 +5,12 @@
     <header>
         <nav class="split">
             <div class="left">
-                <a href="/">Shelf.page</a>
+                <a href="/">finances.page</a>
             </div>
             <div class="right">
                 {{#if currentUser}}
                     <a href="/{{currentUser.details.username}}/?preview=true" target="_blank">Preview</a>
-                    <a href="/user/logout">Log out</a>
+                    <a href="/user/login">Log out</a>
                 {{else}}
                     <a href="/user/signup">Get your own shelf &rarr;</a>
                 {{/if}}
@@ -63,11 +63,23 @@
         has been saving up for and their experience saving...
         </p>
 
+        <section object
+                 key: budget="@search">
+            <h2 target:budget="@innerText"> Monthly Budget: $3223432
+            </h2>
+        </section>
+
+        <section object
+                 key: budget="@search">
+            <h2 target:budget="@innerText"> Spending chart
+            </h2>
+        </section>
+
         <div 
           array
-          key="topics"
+          key="categories"
         >
-            {{#for topic in topics}}
+            {{#for category in categories}}
             <section object
                      key:name="@search">
                 <div class="topic-header split">
@@ -76,23 +88,23 @@
                             target:name="@innerText"
                             edit-control
                             edit:name>
-                            {{default topic.name "New topic"}}
+                            {{default category.name "New Category"}}
                         </h2>
                     </div>
                     <div class="right">
                         <button class="accent block"
-                                new:link 
+                                new:Expense 
                                 edit-control-hide>
-                            Add link
+                            Add Expense
                         </button>
                     </div>
                 </div>
                 <div class="links"
                      array
-                     key="links"
+                     key="expenses"
                      sortable>
-                    {{#for link in topic.links}}
-                    <a class="{{#if ../../isPageAuthor}}fixed{{/if}} block link-item" href="{{link.url}}"
+                    {{#for expense in categories.expenses}}
+                    <a class="{{#if ../../isPageAuthor}}fixed{{/if}} block link-item" href="{{category.expense}}"
                        noopener noreferer
                        object
                        target="_blank"
@@ -102,15 +114,15 @@
                              target:label="@innerText"
                              edit-control
                              edit:label>
-                            {{default link.label "Article name"}}
+                            {{default expense.label "New Expense"}}
                         </span>
                         <span class="link-url"
                              target="_blank"
                              object
-                             key:url="@innerText"
+                             key:money="@innerText"
                              edit-control
-                             edit:url:without-remove>
-                            {{default link.url "https://shelf.page/"}}
+                             edit:money:without-remove>
+                            {{default expense.money "$10.23"}}
                         </span>
                         {{#unless ../../isPageAuthor}}
                           <span class="link-url-button">
@@ -125,8 +137,8 @@
 
         <section>
             <div class="topic-header split">
-                <h2 new:topic edit-control-hide>
-                    + Add a topic section
+                <h2 new:category edit-control-hide>
+                    + Add an expense category
                 </h2>
             </div>
         </section>
