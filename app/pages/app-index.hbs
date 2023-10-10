@@ -63,20 +63,9 @@
         has been saving up for and their experience saving...
         </p>
 
-        <section object
-                 key: budget="@search">
-            <h2 target:budget="@innerText"> Monthly Budget: $3223432
-            </h2>
-        </section>
-
-        <section object
-                 key: budget="@search">
-            <h2 target:budget="@innerText"> Spending chart
-            </h2>
-        </section>
-
         <div 
           array
+          id = "categories"
           key="categories"
         >
             {{#for category in categories}}
@@ -103,8 +92,8 @@
                      array
                      key="expenses"
                      sortable>
-                    {{#for expense in categories.expenses}}
-                    <a class="{{#if ../../isPageAuthor}}fixed{{/if}} block link-item" href="{{category.expense}}"
+                    {{#for expense in category.expenses}}
+                    <a class="{{#if ../../isPageAuthor}}fixed{{/if}} block link-item" href="{{link.url}}"
                        noopener noreferer
                        object
                        target="_blank"
@@ -114,7 +103,7 @@
                              target:label="@innerText"
                              edit-control
                              edit:label>
-                            {{default expense.label "New Expense"}}
+                            {{default expense.label "New sdfdsa"}}
                         </span>
                         <span class="link-url"
                              target="_blank"

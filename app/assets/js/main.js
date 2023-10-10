@@ -1,4 +1,5 @@
 // display all editable parts of the page
+const categories = document.querySelector("#categories")
 
 function highlightEditables(evt) {
     evt.preventDefault();
@@ -18,4 +19,5 @@ function getCategoryTotal(category) {
   return categoryTotal
 }
 
+console.log(Remake.getSaveData(categories))
 initHighlight();
