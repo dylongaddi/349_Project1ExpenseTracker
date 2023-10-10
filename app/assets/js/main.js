@@ -2,6 +2,7 @@
 const testCategories = document.querySelector("#categories")
 const testExpenses = document.querySelector("#categories #expenses")
 const userData = JSON.parse(JSON.stringify(Remake.getSaveData(testCategories)))
+let categoryTotals = []
 
 function highlightEditables(evt) {
     evt.preventDefault();
@@ -18,23 +19,25 @@ function convert(currency) {
   return parseFloat(temp);
 }
 
-function getCategoryTotal(categoryExpenses) {
-  console.log(categoryExpenses)
+
+
+function getCategoryTotal(category) {
   let categoryTotal = 0
-  categoryExpenses.expenses.forEach((expense) => {
+  category.expenses.forEach((expense) => {
     let money = convert(expense.money)
     categoryTotal += money
   })
   return categoryTotal
 }
 
-console.log(Remake.getSaveData(testCategories))
-console.log(Remake.getSaveData(testExpenses))
+userData.categories.forEach((category) => {
+  categoryTotals.push(getCategoryTotal(category))
+})
+
 console.log(userData)
 console.log(userData.categories)
-console.log(userData.categories[0])
 console.log(getCategoryTotal(userData.categories[0]))
-
+console.log(categoryTotals)
 
 
 
