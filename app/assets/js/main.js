@@ -1,5 +1,7 @@
 // display all editable parts of the page
-const categories = document.querySelector("#categories")
+const testCategories = document.querySelector("#categories")
+const testExpenses = document.querySelector("#categories #expenses")
+const userData = JSON.parse(JSON.stringify(Remake.getSaveData(testCategories)))
 
 function highlightEditables(evt) {
     evt.preventDefault();
@@ -11,13 +13,32 @@ function initHighlight () {
   if (hleButton) hleButton.addEventListener('click', highlightEditables);
 }
 
-function getCategoryTotal(category) {
+function convert(currency) {
+  let temp = currency.replace(/[^0-9.-]+/g, "");
+  return parseFloat(temp);
+}
+
+function getCategoryTotal(categoryExpenses) {
+  console.log(categoryExpenses)
   let categoryTotal = 0
-  category.forEach((expense) => {
-    categoryTotal += expense.money
+  categoryExpenses.expenses.forEach((expense) => {
+    let money = convert(expense.money)
+    categoryTotal += money
   })
   return categoryTotal
 }
 
-console.log(Remake.getSaveData(categories))
+console.log(Remake.getSaveData(testCategories))
+console.log(Remake.getSaveData(testExpenses))
+console.log(userData)
+console.log(userData.categories)
+console.log(userData.categories[0])
+console.log(getCategoryTotal(userData.categories[0]))
+
+
+
+
+
+
+
 initHighlight();
