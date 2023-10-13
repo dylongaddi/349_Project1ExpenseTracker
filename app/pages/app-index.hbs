@@ -66,6 +66,7 @@
         <div 
              id ="totals"
              key="totals"
+             watch:categories="displayTotals()"
         >
         </div>
 
@@ -103,6 +104,7 @@
                     <a class="{{#if ../../isPageAuthor}}fixed{{/if}} block link-item" href="{{link.url}}"
                        noopener noreferer
                        object
+                       watch:money:without-remove="displayTotals()"
                        target="_blank"
                        {{#if ../../isPageAuthor}}prevent-default{{/if}}
                        key:label="@search">
@@ -117,8 +119,10 @@
                              object
                              key:money="@innerText"
                              edit-control
+                             watch:money="displayTotals()"
                              edit:money:without-remove>
                             {{default expense.money "$10.23"}}
+                        </span>
                     </a>
                 {{/for}}</div>
             </section>

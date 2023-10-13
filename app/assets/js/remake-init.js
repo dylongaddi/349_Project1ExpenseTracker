@@ -9,6 +9,7 @@ Remake.onSave(function (res) {
   if (!res.success) {
     crostini("Error saving data", {type: "error"});
   }
+  displayTotals()
 });
 
 Remake.onFileUpload(function (res) {
@@ -25,7 +26,6 @@ Remake.onAddItem(function (res) {
   }
 });
 
-Remake.callSaveFunction(document.body)
 
 
 
