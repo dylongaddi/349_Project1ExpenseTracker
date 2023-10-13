@@ -2,7 +2,7 @@
 const testCategories = document.querySelector("#categories")
 const testExpenses = document.querySelector("#categories #expenses")
 const userData = JSON.parse(JSON.stringify(Remake.getSaveData(testCategories)))
-let categoryTotals = []
+let categoryTotals = {}
 
 function highlightEditables(evt) {
     evt.preventDefault();
@@ -31,7 +31,7 @@ function getCategoryTotal(category) {
 }
 
 userData.categories.forEach((category) => {
-  categoryTotals.push(getCategoryTotal(category))
+  categoryTotals[category.name] = getCategoryTotal(category)
 })
 
 console.log(userData)
