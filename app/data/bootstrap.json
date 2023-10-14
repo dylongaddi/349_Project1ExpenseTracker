@@ -1,33 +1,28 @@
 {
-  "displayName": "A bookworm",
-  "bio": "A few words about you, what you like to read, and who you are.",
-  "topics": [
+  "displayName": "A financially responsible person",
+  "bio": "A place to describe yourself and you financial goals.",
+  "categories": [
     {
-      "name": "Community building",
-      "links": [
+      "name": "Bills",
+      "expenses": [
         {
-          "label": "Get Together (book)",
-          "url": "https://gettogether.world/",
-          "id": "3W0m6pVylni2Tv"
+          "label": "Rent",
+          "money": "$1800"
         },
         {
-          "label": "A cellular theory of communities, by Linus",
-          "url": "https://thesephist.com/posts/cellular-communities/",
-          "id": "26WKzU67yrSi3c"
+          "label": "Car",
+          "money": "$350"
         }
-      ],
-      "id": "hpdGDJ6gSi4aWn"
+      ]
     },
     {
-      "name": "Technology",
-      "links": [
+      "name": "Food",
+      "expenses": [
         {
-          "label": "A blog post about Gyo, a simple software computer with an assembly language",
-          "url": "https://wiki.xxiivv.com/site/gyo.html",
-          "id": "r61xVz7Fl5BZhu"
+          "label": "Grocery",
+          "money": "$215"
         }
-      ],
-      "id": "QgXMAlPtcKBOMX"
+      ]
     }
   ],
   "id": "pTjdkgWaMfiyzh"
