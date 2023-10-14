@@ -9,10 +9,10 @@
             </div>
             <div class="right">
                 {{#if currentUser}}
-                    <a href="/{{currentUser.details.username}}/?preview=true" target="_blank">Preview</a>
+                    {{!--<a href="/{{currentUser.details.username}}/?preview=true" target="_blank">Preview</a>--}}
                     <a href="/user/login">Log out</a>
                 {{else}}
-                    <a href="/user/signup">Get your own shelf &rarr;</a>
+                    <a href="/user/signup">Start your finance journey. &rarr;</a>
                 {{/if}}
             </div>
         </nav>
@@ -20,11 +20,7 @@
 
     <div class="hero">
         <h1>
-            <span 
-                  target:display-name="@innerText"
-                  edit-control
-                  edit:display-name:without-remove
-                  >{{displayName}}</span>'s shelf.page
+            Your finances.page
         </h1>
         <p class="bio"
            object
@@ -37,39 +33,28 @@
     <article>
         {{#if isPageAuthor}}
         <div class="instructions">
-            <p><strong>Customize this page!</strong></p>
+            <p><strong>Customize your finance page!</strong></p>
             <p>
             Parts of this page are <em>editable</em>!
             (<a href="#" id="highlightEditables">Click here</a> to see which parts.)
             </p>
             <p>
             Tap on any editable part of the page to update and remove
-            things, and drag to reorder links. You can share your page with friends with your link,
-            <a href="https://shelf.page/{{currentUser.details.username}}"
-               target="_blank">
-                shelf.page/{{currentUser.details.username}}
-            </a>.
-            </p>
-            <p>
-            When others visit this page, the links you add below will be clickable.
-            (You can also try it yourself by opening a private browsing tab.)
+            things, and drag to reorder expenses. 
             </p>
         </div>
         {{/if}}
 
         <p class="preamble">
-        Here's what
-        <span watch:display-name="@innerText">{{displayName}}</span>
-        has been saving up for and their experience saving...
+        Your finances, at a glance.
         </p>
-        
-        <div></div>
+
         <div 
              id ="totals"
              key="totals"
         >
         </div>
-        <div id="pieChart" style="width: 400px; height:auto; responsive:true">
+        <div id="pieChart" style="width: 400px; height:auto; responsive:true;">
             <canvas id="myChart"></canvas>
         </div>
 
@@ -87,7 +72,7 @@
                             target:name="@innerText"
                             edit-control
                             edit:name>
-                            New Category <div id="categoryID" style="opacity:0%">{{default category.id}}</div>
+                            {{default category.name "New Category"}}
                         </h2>
                     </div>
                     <div class="right">
@@ -107,26 +92,30 @@
                     <a class="{{#if ../../isPageAuthor}}fixed{{/if}} block link-item" href="{{link.url}}"
                        noopener noreferer
                        object
-                       watch:money:without-remove="displayTotals()"
                        target="_blank"
                        {{#if ../../isPageAuthor}}prevent-default{{/if}}
                        key:label="@search">
-                        
                         <span class="link-title"
                              target:label="@innerText"
                              edit-control
                              edit:label>
-                            {{default expense.label "New expense"}}
+                            {{default expense.label "New Expense
+                            "}}
                         </span>
                         <span class="link-url"
                              target="_blank"
                              object
                              key:money="@innerText"
                              edit-control
-                             watch:money="displayTotals()"
                              edit:money:without-remove>
-                            {{default expense.money "$1.00"}}
+                            {{default expense.money "$1.00
+                            "}}
                         </span>
+                        {{#unless ../../isPageAuthor}}
+                          <span class="link-url-button">
+                              read this &rarr;
+                          </span>
+                        {{/unless}}
                     </a>
                 {{/for}}</div>
             </section>
