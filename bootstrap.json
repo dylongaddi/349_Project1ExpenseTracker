@@ -1,0 +1,29 @@
+{
+  "displayName": "A financially responsible person",
+  "bio": "A place to describe yourself and you financial goals.",
+  "categories": [
+    {
+      "name": "Bills",
+      "expenses": [
+        {
+          "label": "Rent",
+          "money": "$1800"
+        },
+        {
+          "label": "Car",
+          "money": "$350"
+        }
+      ]
+    },
+    {
+      "name": "Food",
+      "expenses": [
+        {
+          "label": "Grocery",
+          "money": "$215"
+        }
+      ]
+    }
+  ],
+  "id": "pTjdkgWaMfiyzh"
+}
