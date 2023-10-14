@@ -1,0 +1,73 @@
+<head>
+  <title>About Us</title>
+
+</head>
+<body>
+<header>
+  <nav class="split">
+    <div class="left">
+      <a href="/">finances.page</a>
+    </div>
+    <div class="right">
+      <a href="/aboutus">About Us</a>
+      {{#if currentUser}}
+        <a href="/user/logout">Log out</a>
+        <a href="/{{currentUser.details.username}}">Your finances &rarr;</a>
+      {{else}}
+        <a href="/user/login">Log in</a>
+        <a href="/user/signup">Sign up &rarr;</a>
+      {{/if}}
+
+    </div>
+  </nav>
+</header>
+
+<div class="hero">
+  <h1> About Us!</h1>
+  <p class="bio">
+    Meet the dream team, your elite CSUF front end programmers.
+  </p>
+</div>
+
+<article class="sidebar-split">
+  <div class="mainbar">
+    <h1>Dylon.</h1>
+    <p>
+
+      <a href="https://main--bespoke-lokum-33dbff.netlify.app/about">here is the full about me</a>
+      but keeping it short and sweet, I used to be a film major before switching to comp sci. So naturally I love movies/tv/anime and talking about them. A few recent favorites: Everything Everywhere All at Once, Across the Spiderverse, Barbenheimer. I love music especially going to concerts and hearing it live, some of my favorites I've seen live are kendrick lamar (the goat), beyonce, harry styles, & twice. I also love watching and playing basketball and volleyball!
+    </p>
+    <p>
+    <h2>Leo</h2>
+    <p> This beast of a colleague is Targets #1 stock boy and after he finishes his time here are CSUF is bound big leagues in the CS world. Leo also enjoys being able to go on hikes with his mates, attending Dance Music festivals and partying it out on the weekends.  </p> for the
+
+    <h3>Robby.......</h3>
+    <p>
+      Some fun facts about me, I like Illenium, photography, the gym, and going to the beach. I treat photography purely as a hobby, as what makes photography fun for me is the freedom to take pictures of whatever I want. Lastly, Electronic music is probably my most listened to genre, with ILLENIUM being my top artist. I am going to his Trilogy show in LA next year in February.
+    </p>
+
+    <h3>Jared</h3>
+    <p> The rock of the group. Some fun facts about him is that he is a foodie, traveler, and loves to attend festivals. He also likes to attend music festivals and tries to attend at least one every month. His favorite artists include Keinemusik,
+      Vintage Culture, and Rufus Du Sol. He is a CS student at CSUF and it is his first semester here.
+    </p>
+  </div>
+  <div class="sidebar">
+    <section>
+      <h2>Questions or Concerns?</h2>
+      <p>
+        please be sure to address questions and concerns to Leo at <a href="https://www.instagram.com/leoooo._.navva/">@leoooo._.navva</a> on
+        IG and I might just reply!
+      </p>
+      <div class="popular-shelves">
+        <a class="popular-item block" >
+          <div class="popular-header">Quote of the year &rarr;</div>
+          <div class="popular-bio">
+            <strong>Live, Laugh, Code </strong>
+          </div>
+        </a>
+      </div>
+    </section>
+  </div>
+</article>
+</body>
+</html>
