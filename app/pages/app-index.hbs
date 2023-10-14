@@ -63,11 +63,14 @@
         has been saving up for and their experience saving...
         </p>
         
+        <div></div>
         <div 
              id ="totals"
              key="totals"
-             watch:categories="displayTotals()"
         >
+        </div>
+        <div id="pieChart" style="width: 400px; height:auto; responsive:true">
+            <canvas id="myChart"></canvas>
         </div>
 
         <div 
@@ -84,7 +87,7 @@
                             target:name="@innerText"
                             edit-control
                             edit:name>
-                            {{default category.name "New Category"}}
+                            New Category <div id="categoryID" style="opacity:0%">{{default category.id}}</div>
                         </h2>
                     </div>
                     <div class="right">
@@ -108,11 +111,12 @@
                        target="_blank"
                        {{#if ../../isPageAuthor}}prevent-default{{/if}}
                        key:label="@search">
+                        
                         <span class="link-title"
                              target:label="@innerText"
                              edit-control
                              edit:label>
-                            {{default expense.label "New sdfdsa"}}
+                            {{default expense.label "New expense"}}
                         </span>
                         <span class="link-url"
                              target="_blank"
@@ -121,7 +125,7 @@
                              edit-control
                              watch:money="displayTotals()"
                              edit:money:without-remove>
-                            {{default expense.money "$10.23"}}
+                            {{default expense.money "$1.00"}}
                         </span>
                     </a>
                 {{/for}}</div>
